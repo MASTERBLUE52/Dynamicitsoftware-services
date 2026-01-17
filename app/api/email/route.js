@@ -15,7 +15,7 @@ export async function POST(req) {
     });
 
     const sentForm = new Sender(
-      "MS_wllLIf@test-69oxl5eyyqxl785k.mlsender.net",
+      "no-reply@test-xyi6jg8mq4dozr.mlsender.net",
       "Dynamic IT Services"
     );
 
