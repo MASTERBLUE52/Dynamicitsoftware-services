@@ -15,12 +15,12 @@ export async function POST(req) {
     });
 
     const sentForm = new Sender(
-      "no-reply@test-xyi6jg8mq4dozr.mlsender.net",
+      process.env.MAILERSEND_EMAIL,
       "Dynamic IT Services"
     );
 
     const recipients = [
-      new Recipient("khambhatiburhanuddin72@gmail.com", "Hatim Materwala"),
+      new Recipient("khambhatiburhanuddin72@gmail.com", "Burhanuddin"),
     ];
 
     const emailParams = new EmailParams()
