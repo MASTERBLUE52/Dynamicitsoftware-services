@@ -49,7 +49,7 @@ const serviceCards = [
 function ServiceCard({ item }) {
   return (
     <div className="bg-[#15122d] border border-purple-800/30 rounded-xl overflow-hidden hover:border-purple-500 transition group">
-      <div className="relative h-44">
+      <div className="relative h-40 sm:h-44">
         <Image
           src={item.image}
           alt={item.title}
@@ -58,8 +58,8 @@ function ServiceCard({ item }) {
         />
       </div>
 
-      <div className="p-6 space-y-4">
-        <h3 className="text-xl font-semibold text-purple-400">
+      <div className="p-5 sm:p-6 space-y-4">
+        <h3 className="text-lg sm:text-xl font-semibold text-purple-400">
           {item.title}
         </h3>
 
@@ -74,14 +74,14 @@ function ServiceCard({ item }) {
 export default function ServicesPage() {
   return (
     <section className="bg-[#0e0b1f] text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-25 space-y-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-24 space-y-16 sm:space-y-20">
 
         {/* INTRO */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Unlimited <span className="text-purple-400">Customization</span>
           </h1>
-          <p className="max-w-3xl mx-auto text-gray-400 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-sm sm:text-base text-gray-400 leading-relaxed">
             In a highly competitive environment, even a small advantage can make
             a big difference. Understanding the benefits of global IT
             collaboration and strategic outsourcing helps businesses stay agile,
@@ -90,7 +90,7 @@ export default function ServicesPage() {
         </div>
 
         {/* CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {serviceCards.map((item, index) => (
             <ServiceCard key={index} item={item} />
           ))}

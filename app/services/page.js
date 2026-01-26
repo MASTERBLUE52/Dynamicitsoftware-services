@@ -26,14 +26,13 @@ const services = [
 export default function ServicesPage() {
   return (
     <section className="bg-[#0e0b1f] text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-25 space-y-16">
-
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-24 space-y-16">
         {/* HERO */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Our <span className="text-purple-400">Services</span>
           </h1>
-          <p className="max-w-3xl mx-auto text-gray-400">
+          <p className="max-w-3xl mx-auto text-sm sm:text-base text-gray-400">
             Powerful digital solutions designed to help your business grow,
             scale, and succeed in the modern online world.
           </p>
@@ -44,30 +43,29 @@ export default function ServicesPage() {
           <Image
             src="/img/services_logo.png"
             alt="Dynamic IT Services"
-            width={900}
-            height={1000}
-            className="opacity-90 rounded-2xl"
+            width={800}
+            height={500}
+            className="w-full max-w-4xl opacity-90 rounded-2xl"
             priority
           />
         </div>
 
         {/* SERVICES GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-[#15122d] border border-purple-800/30 rounded-xl p-8 hover:border-purple-500 transition"
+              className="bg-[#15122d] border border-purple-800/30 rounded-xl p-6 sm:p-8 hover:border-purple-500 transition"
             >
-              <h3 className="text-xl font-semibold text-purple-400 mb-3">
+              <h3 className="text-lg sm:text-xl font-semibold text-purple-400 mb-3">
                 {service.title}
               </h3>
-              <p className="leading-relaxed text-gray-400">
+              <p className="leading-relaxed text-sm sm:text-base text-gray-400">
                 {service.description}
               </p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

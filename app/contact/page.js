@@ -31,18 +31,22 @@ export default function Contact() {
   };
 
   return (
-    <footer className="bg-[#0e0b1f] text-gray-300 pt-25">
-        <div className="text-4xl font-bold text-center pb-10">
-            Contact US
-        </div>
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <footer className="bg-[#0e0b1f] text-gray-300 pt-20 sm:pt-24">
+      {/* TITLE */}
+      <div className="text-center pb-10">
+        <h1 className="text-3xl sm:text-4xl font-bold text-white">
+          Contact <span className="text-purple-400">Us</span>
+        </h1>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* LEFT */}
         <div className="space-y-6">
-          <h3 className="text-2xl font-semibold text-white">
+          <h3 className="text-xl sm:text-2xl font-semibold text-white">
             Get in Touch
           </h3>
 
-          <p className="text-gray-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
             Feel free to get in touch with us any convenient way.
             Thank you for your interest in Dynamic IT Services.
             Please use the form for any questions or professional consulting requests.
@@ -70,9 +74,8 @@ export default function Contact() {
         </div>
 
         {/* RIGHT */}
-        <div className="bg-[#15122d] p-8 rounded-xl shadow-lg">
+        <div className="bg-[#15122d] p-6 sm:p-8 rounded-xl shadow-lg">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-
             <div>
               <label className="block text-sm mb-1 text-gray-300">
                 Name
@@ -83,7 +86,9 @@ export default function Contact() {
                 placeholder="Your name"
               />
               {errors.name && (
-                <p className="text-sm text-red-400 mt-1">Name is required</p>
+                <p className="text-sm text-red-400 mt-1">
+                  Name is required
+                </p>
               )}
             </div>
 
@@ -98,7 +103,9 @@ export default function Contact() {
                 placeholder="you@example.com"
               />
               {errors.email && (
-                <p className="text-sm text-red-400 mt-1">Email is required</p>
+                <p className="text-sm text-red-400 mt-1">
+                  Email is required
+                </p>
               )}
             </div>
 
@@ -113,7 +120,9 @@ export default function Contact() {
                 placeholder="Your message..."
               />
               {errors.message && (
-                <p className="text-sm text-red-400 mt-1">Message is required</p>
+                <p className="text-sm text-red-400 mt-1">
+                  Message is required
+                </p>
               )}
             </div>
 
@@ -127,7 +136,8 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="border-t border-purple-800/30 py-4 text-center text-sm text-gray-500">
+      {/* FOOTER */}
+      <div className="border-t border-purple-800/30 mt-16 py-4 text-center text-xs sm:text-sm text-gray-500">
         © {new Date().getFullYear()} Dynamic IT Services. All rights reserved.
       </div>
     </footer>

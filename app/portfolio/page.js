@@ -91,13 +91,15 @@ const websites = [
   },
 ];
 
-function PortfolioCard({ item }) {
+function PortfolioCard({ item, external = false }) {
   return (
     <Link
       href={item.link}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
       className="group bg-[#15122d] border border-purple-800/30 rounded-xl overflow-hidden hover:border-purple-500 transition"
     >
-      <div className="relative h-48">
+      <div className="relative h-44 sm:h-48">
         <Image
           src={item.image}
           alt={item.title}
@@ -106,8 +108,8 @@ function PortfolioCard({ item }) {
         />
       </div>
 
-      <div className="p-6 space-y-2">
-        <h3 className="text-lg font-semibold text-purple-400">
+      <div className="p-5 sm:p-6 space-y-2">
+        <h3 className="text-base sm:text-lg font-semibold text-purple-400">
           {item.title}
         </h3>
         <p className="text-sm text-gray-400 leading-relaxed">
@@ -121,14 +123,13 @@ function PortfolioCard({ item }) {
 export default function PortfolioPage() {
   return (
     <section className="bg-[#0e0b1f] text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-25 space-y-24">
-
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-24 space-y-24">
         {/* HEADER */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Our <span className="text-purple-400">Portfolio</span>
           </h1>
-          <p className="max-w-3xl mx-auto text-gray-400">
+          <p className="max-w-3xl mx-auto text-sm sm:text-base text-gray-400">
             A showcase of software solutions and websites crafted with precision,
             innovation, and performance in mind.
           </p>
@@ -136,11 +137,11 @@ export default function PortfolioPage() {
 
         {/* PROJECTS */}
         <div className="space-y-10">
-          <h2 className="text-3xl font-semibold text-white">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white">
             Projects
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
             {projects.map((item, i) => (
               <PortfolioCard key={i} item={item} />
             ))}
@@ -149,17 +150,16 @@ export default function PortfolioPage() {
 
         {/* WEBSITES */}
         <div className="space-y-10">
-          <h2 className="text-3xl font-semibold text-white">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white">
             Websites
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
             {websites.map((item, i) => (
-              <PortfolioCard key={i} item={item} />
+              <PortfolioCard key={i} item={item} external />
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
